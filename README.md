@@ -1,4 +1,4 @@
 # Sams-Baseball-Zone
-Hello! This is my on going github repository that will hold my practice in both SQL, Python, etc., and I will hold my portfolio in this repository as well for live views of my code. 
+Context-Neutral Linear Weights (wOP+) vs. Environmentally Adjusted Metrics (wRC+)
 
-As of now, I am working on a project based around creating a new offensive production metric I like to call "wOP+", which stands for "Weighted Offensive Production". To create this score, I used the help of Baseball Reference and pulled 2026 offensive stats for all major league players, and weighted this metric on the "100" scale for comparison to similar weighted stats like "wRC+" and "WAR", to see the difference between linear, raw data, and comparing it to situational weighted data, and seeing how this effects players and teams decision making, and the benefit/downside of using either linear (wOP+) stats and situational (wRC+") stats. 
+Research Question: Why do modern baseball front offices heavily favor weighted metrics influenced by environmental variables (like wRC+) versus raw, context-neutral linear data (Weighted Offensive Production (my stat) (wOP+)? What are the strategic pros and cons of each, and how can a hybrid approach improve talent evaluation and roster construction?
