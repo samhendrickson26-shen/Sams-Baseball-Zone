@@ -5,26 +5,34 @@
 
 Disclaimer: I used Python to code this project, and I used the aide of Gemini with coding outlines and unknown syntax. 
 
-wRC+ is a widely known and analyzed stat in Major League front offices that is used to help determine a players worth and offensive productiveness. One of it's main ingredients that makes it stand out from the rest, is its variable weights that's inside it's equation, including ball park factors, and LR/BA (league run average/ plate appearance is roughly 0.11 to 0.12 per PA, which means a team roughly scores 1 run every 8 or 9 plate appearances.). But what would happen, if someone created a statistic, that used context-neutral linear weights (like run expanctancy per raw stat), and compared that stat to wRC+, what would be the outcome? Well, that's exactly what I set out to do, by creating Weighted Offensive Production (wOP+)! If you want a full breakdown of this project, I will link the pdf here: ![Full wOP+ vs. wRC+ Analysis](Context-Neutral%20Linear%20Weights%20(wOP+)%20vs.%20Environmentally%20Adjusted%20Metrics%20(wRC+).pdf)** . 
+wRC+ is a widely known and analyzed stat in Major League front offices that is used to help determine a players worth and offensive productiveness. One of its main ingredients that makes it stand out from the rest, is its variable weights that's inside its equation, including ball park factors, and LR/BA (league run average/ plate appearance is roughly 0.11 to 0.12 per PA, which means a team roughly scores 1 run every 8 or 9 plate appearances.). But what would happen, if someone created a statistic that used context-neutral linear weights (like run expectancy per raw stat), and compared that stat to wRC+, what would be the outcome? Well, that's exactly what I set out to do, by creating Weighted Offensive Production (wOP+)! If you want a full breakdown of this project, I will link the pdf here: ![Full wOP+ vs. wRC+ Analysis](** . 
 
-For the weighting system of my stat, I pulled from FanGraphs "Guts!" section, and used the run expectancy weights for these stats: BB, HBP, 1B, 2B, 3B, HR, SB, and CS. I then averaged players scores on the same scale as wRC+ used, making a "100" score the average players score. I kept the minimum plate appearances to 500, to keep things consistent. I wanted to analyze everyday players for this analysis. 
+For the weighting system of my stat, I pulled from FanGraphs "Guts!" section, and used the run expectancy weights for these stats: BB, HBP, 1B, 2B, 3B, HR, SB, and CS. I then averaged players' scores on the same scale as wRC+ uses, making a "100" score the average player's score. I kept the minimum plate appearances to 500, to keep things consistent. I wanted to analyze everyday players for this analysis.  
 
 Here is my first pull of data from my github repository showing the top 20 Players for wOP+ from 2026: 
+
 ![Top 20 wOP Players](Top%2020%20wOP%20players.PNG)
+
 And here is the list of the top 20 players when looking at wRC+ (minimum 500 PA's):
+
 ![Top 20 wRC Players](top%2020%20wRC%20players.PNG)
 
 As you can see, these lists have a lot of players in common, 17 in fact are on both lists, that's an 85% alignment between the two, which shows on a base level, that using both of these stats as legitimate assessments for talent, are viable options to use. However, there are some outliers involved, and I am going to be analyzing and breaking down 3 of them here, to try and look deeper into the data, to see why one was on one of the lists, but not the other. But before that, I wanted to compare the matching 17 players, and see if I found any interesting discoveries.
 
-Below this, is a Delta chart that I created, showing the difference in wRC+, and wOP+. The biggest outlier here is Yordan Alvarez. His delta is +49, the biggest out of the 17 players matching players. The rest of them are all in the +20-35 range, but this tells a story. My wOP+ strictly weighs players performances on a linear weight, based solely on walks, singles, doubles, triples, home runs, stolen bases, and caught stealing attempts. The gap between the two, is how wRC+ inputs its environmental factors, how it weighs ball park metrics, whether a hitter is hitting well in a pitcher’s park or vice versa, and the League Runs per Plate Appearance for that given season. Those factors show in the biggest of deltas (Yordan Alvarez), and it is a good contrast between the more concise, conservative wOP+, and the more heavily weighted and always changing wRC+. 
+Below, is a Delta chart that I created, showing the difference in wRC+, and wOP+. The biggest outlier here is Yordan Alvarez. His delta is +49, the biggest out of the 17 players. The rest of them are all in the +20-35 range, but this tells a story. My wOP+ strictly weighs players performances on linear weights, based solely on walks, singles, doubles, triples, home runs, stolen bases, and caught stealing attempts. The gap between the two, is how wRC+ inputs its environmental factors, how it weighs ball park metrics, whether a hitter is hitting well in a pitcher’s park or vice versa, and the League Runs per Plate Appearance for that given season. Those factors show in the biggest of deltas (Yordan Alvarez), and it is a good contrast between the more concise, conservative wOP+, and the more heavily weighted and always changing wRC+. 
 
+# The Outliers
+
+Here is where the interesting diversions happen when looking at the outlier players. For each one, I am going to analyze their wOP+ and wRC+ difference, make a hypothesis for the why there's a difference, and I will look at a few determining factors to see why they are distinct from one another, and to see if there is some underlying stats that are getting over looked: The ball park they play in, the League Runs per AB for 2026, and their Statcast numbers (exit velocity, average launch angle, hard hit ball rate, etc.). First up, Kyle Schwarber. 
+
+![Delta Chart for wRC+ - wOP+](Delta%20between%20wRC%20and%20wOP.PNG)
 
 # Kyle Schwarber
 wOP+: 113+
 
 wRC+: 130+
 
-Hypothesis: Kyle plays in Philadelphia, one of the more hitter friendly parks, especially for pull side lefties like himself, he fits perfectly there with his swing. I think the ball park factor is a bigger draw back for him in this scenario when looking at his wRC+. 
+Hypothesis: Kyle plays in Philadelphia, one of the more hitter friendly parks, especially for pull side lefties like himself, he fits perfectly there with his swing. I think the ball park factor is a bigger drawback for him in this scenario when looking at his wRC+. 
 
 Analysis: Kyle barely missed out on the wRC+ top 20, ranking 22nd. I think his wRC+ rating and wOP+ ratings are valid. The reason why he did not break into the top 20 is mainly due to one factor: where his home team plays. He is a huge pull side hitter, and Philadelphia favors lefty pull hitters, as you can see for his spray chart:
 
